@@ -1,0 +1,52 @@
+Steps for Running the Code
+1. Install Required Libraries: Ensure you have Python and the necessary libraries installed. Run the following command to install dependencies:
+
+pip install flask pandas scikit-learn
+
+2. Set Up Directory Structure
+Organize the project folder as follows:
+
+project/
+│
+├── models/
+│   ├── kmeans_model.pkl
+│   ├── best_dbscan_model.pkl
+│   └── isolation_forest_model.pkl
+│
+├── pages/
+│   ├── index.html
+│   ├── form.html
+│   └── result.html│
+├── main.py
+
+models/: Contains the pre-trained model files (kmeans_model.pkl, best_dbscan_model.pkl, isolation_forest_model.pkl).
+
+pages/: Contains the HTML templates for the app (index.html, form.html, result.html).
+
+main.py: The Flask application code.
+
+3. Verify Model Files
+
+Ensure the model files (kmeans_model.pkl, best_dbscan_model.pkl, isolation_forest_model.pkl) are available in the models/ directory. The models must be serialized using pickle.
+
+4. Prepare HTML Templates
+
+Ensure the pages/ directory contains:
+
+ 1.index.html: Landing page content.
+ 2.form.html: A form to collect input values (dur, tot_pkts, tot_bytes, src_bytes).
+ 3.result.html: A page to display prediction results (kmeans, dbscan, isolation).
+
+5. Run the Application
+Run the Flask application using the following command in the project directory:
+
+python main.py
+
+The app will run on http://127.0.0.1:3999.
+
+6. Test the Application
+
+ 1.Open your browser and navigate to http://127.0.0.1:3999. 
+ 2.Use the landing page (index.html) to navigate to the form.
+ 3.Input the required parameters in the form and submit.
+ 4.View the predictions on the result.html page.

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Prediction Form</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 40px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label, input {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Data for Prediction</h2>
+        <form id="predictionForm" action="/predict" method="POST">
+            <label for="dur">Duration (dur):</label>
+            <input type="number" step="any" id="dur" name="dur" required>
+
+            <label for="tot_pkts">Total Packets (tot_pkts):</label>
+            <input type="number" step="any" id="tot_pkts" name="tot_pkts" required>
+
+            <label for="tot_bytes">Total Bytes (tot_bytes):</label>
+            <input type="number" step="any" id="tot_bytes" name="tot_bytes" required>
+
+            <label for="src_bytes">Source Bytes (src_bytes):</label>
+            <input type="number" step="any" id="src_bytes" name="src_bytes" required>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
